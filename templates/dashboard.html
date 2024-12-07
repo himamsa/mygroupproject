@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Data Pull - HSHD_NUM #10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            max-width: 1200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sample Data Pull for HSHD_NUM #10</h1>
+    </header>
+    <div class="container">
+        <h2>Household and Transaction Data</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>HSHD_NUM</th>
+                        <th>BASKET_NUM</th>
+                        <th>PURCHASE</th>
+                        <th>PRODUCT_NUM</th>
+                        <th>DEPARTMENT</th>
+                        <th>COMMODITY</th>
+                        <th>SPEND</th>
+                        <th>UNITS</th>
+                        <th>STORE_R</th>
+                        <th>WEEK_NUM</th>
+                        <th>YEAR</th>
+                        <th>L</th>
+                        <th>AGE_RANGE</th>
+                        <th>MARITAL</th>
+                        <th>INCOME_RANGE</th>
+                        <th>HOMEOWNER</th>
+                        <th>HSHD_COMPOSITION</th>
+                        <th>HH_SIZE</th>
+                        <th>CHILDREN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                    <tr>
+                        <td>{{ row.HSHD_NUM }}</td>
+                        <td>{{ row.BASKET_NUM }}</td>
+                        <td>{{ row.PURCHASE }}</td>
+                        <td>{{ row.PRODUCT_NUM }}</td>
+                        <td>{{ row.DEPARTMENT }}</td>
+                        <td>{{ row.COMMODITY }}</td>
+                        <td>{{ row.SPEND }}</td>
+                        <td>{{ row.UNITS }}</td>
+                        <td>{{ row.STORE_R }}</td>
+                        <td>{{ row.WEEK_NUM }}</td>
+                        <td>{{ row.YEAR }}</td>
+                        <td>{{ row.L }}</td>
+                        <td>{{ row.AGE_RANGE }}</td>
+                        <td>{{ row.MARITAL }}</td>
+                        <td>{{ row.INCOME_RANGE }}</td>
+                        <td>{{ row.HOMEOWNER }}</td>
+                        <td>{{ row.HSHD_COMPOSITION }}</td>
+                        <td>{{ row.HH_SIZE }}</td>
+                        <td>{{ row.CHILDREN }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Sample Dashboard. All rights reserved.</p>
+    </footer>
+</body>
+</html>

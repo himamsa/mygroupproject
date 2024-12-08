@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retail Analytics Dashboard</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+<style>
+    .button-container {
+            margin-left: auto;
+        }
+
+        .button-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    color: white;
+    text-decoration: none;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+</style>
+<body>
+    <div class="button-container text-right mb-4">
+        <a href="{{ url_for('home') }}" class="btn btn-primary mr-2">
+            <i class="fas fa-chart-line mr-2"></i>home
+        </a>
+        <a href="{{ url_for('predictproducts') }}" class="btn btn-primary mr-2">
+            <i class="fas fa-chart-bar mr-2"></i>Predict Products
+        </a>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">
+            <i class="fas fa-sign-out-alt mr-2"></i>Logout
+        </a>
+    </div>
+
+    <h1>Retail Analytics Dashboard</h1>
+    
+    <h2>Household Size Analysis</h2>
+    {{ hh_size_plot|safe }}
+    
+    <h2>Income Range Analysis</h2>
+    {{ income_plot|safe }}
+    
+    <h2>Presence of Children Analysis</h2>
+    {{ children_plot|safe }}
+    
+    <h2>Year-over-Year Household Spending</h2>
+    {{ yoy_spend_plot|safe }}
+    
+    <h2>Product Categories by Popularity</h2>
+    {{ category_popularity_plot|safe }}
+    
+    <h2>Top Product Combinations Driving Cross-Selling</h2>
+    {{ cross_sell_plot|safe }}
+    
+    <h2>Seasonal Spending Patterns</h2>
+    {{ seasonal_plot|safe }}
+    
+    <h2>Preferences for Private vs. National Brands and Organic Items</h2>
+    {{ brand_pref_plot|safe }}
+</body>
+</html>

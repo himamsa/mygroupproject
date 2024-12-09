@@ -51,7 +51,6 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write #This is required for requesting the JWT
-      contents: read    # Required for repo access
 
     steps:
       - name: Download artifact from build job
@@ -66,9 +65,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_789A39B3574349BF9E46139FA87EDD55 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_BA118F3D053B4F31A1B9CE88FDD9AC6B }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8454AE813E0440C2A79F5B48669E92DF }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_03EE2DFDBA0C4F878D78AE459C845836 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0566BA9B64FD4B6D9208EE47F1B488E1 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3AD0D8F505234FF0BF842482603EC2EF }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
